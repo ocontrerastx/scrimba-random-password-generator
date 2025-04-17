@@ -4,14 +4,22 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 let firstPasswordEl = document.getElementById("first-password");
 let secondPasswordEl = document.getElementById("second-password");
 
+
 function generatePassword() {
-    let firstPassword = "";
-    
-    firstPassword = Math.random() * characters.length
-    console.log(firstPassword)
-    console.log(characters.length)
-    // for (i = 0; i < characters.length; i++) {
-    //     firstPassword = 
-    // }
+    let passwordArray = []
+    let password = ""
+
+    for (e = 0; e < 2; e++) {
+        for (i = 0; i < 15; i++) {  
+            password += characters[Math.floor(Math.random() * characters.length)]
+        } 
+        passwordArray.push(password)
+        password = ""
+    }
+
+    firstPasswordEl.value = passwordArray[0]
+    secondPasswordEl.value = passwordArray[1]
 }
+
+
 

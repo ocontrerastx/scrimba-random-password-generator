@@ -13,11 +13,11 @@
     <div class="container">
         <h1>Generate a <br><span class="text-highlight">random password</span></h1>
         <p>Never use an insecure password again.</p>
-        <button>Generate passwords</button>
+        <button onclick="generatePassword()">Generate passwords</button>
         <hr>
         <div class="password-section">
-            <input type="text" readonly>
-            <input type="text" readonly/>
+            <input type="text" id="first-password" readonly>
+            <input type="text" id="second-password" readonly/>
         </div>
     </div>
     <script src="index.js"></script>

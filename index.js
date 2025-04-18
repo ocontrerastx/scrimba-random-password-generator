@@ -17,8 +17,22 @@ function generatePassword() {
         password = ""
     }
 
-    firstPasswordEl.value = passwordArray[0]
-    secondPasswordEl.value = passwordArray[1]
+    firstPasswordEl.textContent = passwordArray[0]
+    secondPasswordEl.textContent = passwordArray[1]
+}
+
+async function saveToClipboard(passwordField) {
+    console.log(passwordField)
+
+    if (passwordField === 'first-password') {
+        passwordField = firstPasswordEl
+    } else { passwordField = secondPasswordEl}
+
+    try {
+        await navigator.clipboard.writeText(passwordField.textContent);
+      } catch (err) {
+        console.error(err.name, err.message);
+      }
 }
 
 

@@ -1,7 +1,18 @@
+:root {
+    --c-dark-bg: #1F2937;
+    --c-dark-hr: #2F3E53;
+    --c-grey-text: #D5D4D8;
+    --c-green-text-heading: #4ADF86;
+    --c-green-text-button: #55F991;
+    --c-green-button: #10B981;
+    --c-green-button-hover: #059669;
+    --c-green-button-active: #047857;
+    --white: #FFFFFF;
+  }
 body {
     margin: 0;
-    background-color: #1F2937;
-    font-family: Karla, sans-serif;
+    background-color: var(--c-dark-bg);
+    font-family: Inter, sans-serif;
 }
 
 .container {
@@ -10,26 +21,26 @@ body {
 }
 
 h1 {
-    color: #FFFFFF;
+    color: var(--white);
+    font-family: Karla, sans-serif;
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 0;
 }
 
 .text-highlight {
-    color: #4ADF86;
+    color: var(--c-green-text-heading);
 }
 
-p {
-    color: #D5D4D8;
-    font-family: Inter, sans-serif;
+.subtitle {
+    color: var(--c-grey-text);
     font-size: 20px;
     margin: 10px 0 0;
 }
 
 button {
-    color: #FFFFFF;
-    background-color: #10B981;
+    color: var(--white);
+    background-color: var(--c-green-button);
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -39,35 +50,38 @@ button {
 }
 
 button:hover {
-    background-color: #059669;
+    background-color: var(--c-green-button-hover);
 }
 
 button:active {
-    background-color: #047857;
+    background-color: var(--c-green-button-active);
 }
 
 hr {
     margin-top: 35px;
-    border: 1px solid #2F3E53;
+    border: 1px solid var(--c-dark-hr);
+}
+
+p {
+    margin-top: 35px;
+    color: var(--c-grey-text);
+    font-size: 14px;
 }
 
 .password-section {
     display: flex;
     justify-content: space-between;
     gap: 24px;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 input[type=text] {
     width: 100%;
     height: 40px;
     background-color: #273549;
-    color: #55F991;
+    color: var(--c-green-text-button);
     border: none;
     border-radius: 6px;
     text-align: center;
-    font-family: Inter, sans-serif;
     font-weight: 500;
 }
-
-

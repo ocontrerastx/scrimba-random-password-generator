@@ -3,11 +3,12 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let firstPasswordEl = document.getElementById("first-password");
 let secondPasswordEl = document.getElementById("second-password");
-
+let messageEl = document.getElementById("message");
 
 function generatePassword() {
     let passwordArray = []
     let password = ""
+    messageEl.textContent = ""
 
     for (e = 0; e < 2; e++) {
         for (i = 0; i < 15; i++) {  
@@ -22,17 +23,26 @@ function generatePassword() {
 }
 
 async function saveToClipboard(passwordField) {
-    console.log(passwordField)
 
-    if (passwordField === 'first-password') {
-        passwordField = firstPasswordEl
-    } else { passwordField = secondPasswordEl}
+    let messageField = ""
+    let message = "copied to clipboard"
 
-    try {
-        await navigator.clipboard.writeText(passwordField.textContent);
-      } catch (err) {
-        console.error(err.name, err.message);
-      }
+        if (passwordField === 'first-password') {
+            passwordField = firstPasswordEl
+            messageField = "First password "
+        } else { 
+            passwordField = secondPasswordEl
+            messageField = "Second password "
+        }
+    
+        try {
+            await navigator.clipboard.writeText(passwordField.textContent);
+          } catch (err) {
+            console.error(err.name, err.message);
+          }
+        
+        messageEl.textContent = messageField + message;
+    
 }
 
 

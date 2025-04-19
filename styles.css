@@ -45,11 +45,11 @@ h1 {
 button {
     color: var(--white);  
     border: none;
+    border-radius: 6px;
 }
 
 .button-generate-password {
     background-color: var(--c-green-button);
-    border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
     margin-top: 50px;
@@ -105,3 +105,25 @@ hr {
 .button-copy:active {
     background-color: var(--c-blue-button-active);
 }
+
+#message {
+    color: var(--c-grey-text);
+    font-size: 14px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+      margin: 115px 15px;
+    }
+
+    .password-section {
+        flex-wrap: wrap;
+    }
+
+    .password {
+        min-width: 214px;
+    }
+  }
